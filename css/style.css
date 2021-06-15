@@ -9,10 +9,12 @@
     width: 100vw;
     height: 100vh;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .main>div{
     width: 300px;
-    margin: 300px auto;
 }
 header ul{
     list-style: none;

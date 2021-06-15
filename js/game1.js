@@ -128,7 +128,7 @@ function show(name){
     $$('.page').forEach(e=>{
         e.style.display='none'
     })
-    $(name).style.display='block'
+    $(name).style.display='flex'
 }
 function clearCanvasAll(){
     $$('canvas').forEach(c=>{
