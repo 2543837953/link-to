@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="page main" style="display: block">
+        <div>
+            <div class="logo">
+                <img src="img/logo.png" alt="" id="logo">
+            </div>
+            <button class="load-game-btn">Load Game</button>
+            <button class="new-game-btn">New Game</button>
+            <button class="rank-btn">Ranking</button>
+            <div class="new-game-form" style="display:none;margin-top:30px;">
+                <label for="nickname">You Nickname</label><br>
+                <input type="text" id="nickname" name="nickname" style="padding:5px 3px;"> <br>
+                <input type="submit" value="submit"  id="accept-btn" style="padding:5px 10px; margin-top:10px">
+            </div>
+        </div>
+    </div>
+    <div class="page level" style="display: none">
+
+
+            <select name="level" id="level" style="display: inline-block;position: absolute;left:50%;top:50%;transform:translate(-200% -50%);padding:5px 8px;">
+                <option value="" selected>-- Select a level --</option>
+                <option value="easy" >Easy</option>
+                <option value="normal">Normal</option>
+                <option value="hard">Hard</option>
+            </select>
+
+    </div>
+    <div class="page game-board" style="display:none;">
+        <header>
+            <ul>
+                <li>Nickname:<span class="nickname"></span></li>
+                <li>Level: <span class="levels"></span></li>
+                <li>Timer: <span class="timer">100</span>s</li>
+                <li>Coin: <span class="coin"></span></li>
+                <li>Score: <span class="score">0</span></li>
+                <li><button class="launch">Launch</button></li>
+                <li class="tool-box"><button class="tool-btn">Toolbox</button>
+                    <div class="tool-info" style="display: none">
+                        <div class="tool"><img src="img/paver.png" alt="" id="paver"></div>
+                        <div class="tool"><img src="img/rebirth_gate.png" alt="" id="rebirth_gate"></div>
+                        <div class="tool" ><img src="img/navigator.png" alt="" id="navigator"></div>
+                        <div class="tool" ><img src="img/eraser.png" alt="" id="eraser"></div>
+                    </div>
+                </li>
+                <li class="setting">
+                    <button id="setting">Setting</button>
+                    <div class="set-info" style="display: none;" >
+                        <button class="save">Save</button>
+                        <button class="load">Load</button>
+                    </div>
+                </li>
+
+            </ul>
+
+        </header>
+        <div class="board">
+            <canvas id="road"></canvas>
+            <canvas id="tools"></canvas>
+            <canvas id="citizens"></canvas>
+            <canvas id="marks"></canvas>
+        </div>
+        <div class="box" style="display: none;">
+            <div class="alter win" style="display: none;">
+                <h1 style="color: green">You Win</h1>
+                <p class="win-score item">Score: <span class="score-val">123</span></p>
+                <p class="win-coin item">Coin: <span class="coin-val">123</span></p>
+                <div class="win-btn">
+                    <button class="end-game">End Game</button>
+                    <button class="next-level">Next Level</button>
+                </div>
+            </div>
+            <div class="alter lose" style="display: none;">
+                <h1  style="color: red">You Lose</h1>
+                <p class="lose-score item">Score: <span class="score-val">123</span></p>
+                <p class="lose-coin item">Coin: <span class="coin-val">123</span></p>
+                <div class="lose-btn">
+                    <button class="play-again">Play Again</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page rank" style="display: none">
+        <table>
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Nickname</th>
+                    <th>Score</th>
+                    <th>Time Left</th>
+                </tr>
+            </thead>
+            <tbody id="rank-rows">
+
+            </tbody>
+        </table>
+    </div>
+<script src="js/game1.js"></script>
+</body>
+</html>
